@@ -1,3 +1,5 @@
 {
-  "webserver":false
+  "webserver":false,
+  "folder":"webserver",
+  "logfile":"chatlog.txt"
 }
