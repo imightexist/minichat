@@ -1,5 +1,5 @@
 //packages
-const websocketServer = require('ws').WebsocketServer;
+const websocketServer = require('ws').server;
 const fs = require('fs');
 const config = require('./config.json');
 const ws = new websocketServer({port:config.port});
