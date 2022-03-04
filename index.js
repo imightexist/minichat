@@ -6,6 +6,7 @@ const ws = new websocketServer({port:config.port});
 const express = require('express');
 const app = express();
 var clients = [];
+var names = [];
 
 //webserver
 if (config.webserver){
