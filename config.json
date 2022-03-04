@@ -1,5 +1,6 @@
 {
   "webserver":false,
   "folder":"webserver",
-  "logfile":"chatlog.txt"
+  "logfile":"chatlog.txt",
+  "port":"6004"
 }
