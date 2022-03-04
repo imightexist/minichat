@@ -1,6 +1,7 @@
 <head>
   <title>Minichat client</title>
   <script src="script.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="login" id="login" style="display:none;width:100%;height:100%">
@@ -10,4 +11,6 @@
   <div class="chat" id="chat">
     
   </div>
+  <input id="chat-input" placeholder="Message" style="font-size:30px">
+  <button onclick="send()" class="btn-green">Send</button>
 </body>
