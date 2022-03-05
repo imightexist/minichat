@@ -5,7 +5,7 @@ const config = require('./config.json');
 const express = require('express');
 const app = express();
 const http = require('http').createServer(app);
-const ws = new websocketServer({port:config.port,server:http});
+const ws = new websocketServer({server:http});
 var clients = [];
 var names = [];
 
