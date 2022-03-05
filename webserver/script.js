@@ -42,5 +42,5 @@ var socket = new WebSocket("ws://" + window.location.host);
 if (getCookie("username") == ""){
   document.getElementById("login").style.display = "";
 }else{
-  socket.send("username",getCookie(username));
+  socket.send("username",getCookie("username"));
 }
