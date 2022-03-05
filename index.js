@@ -17,6 +17,7 @@ if (config.webserver){
 
 //websocket
 ws.on('connection',function(f,err){
+  f.isAlive = true;
   clients.push(f);
   if (err){
     throw err;
