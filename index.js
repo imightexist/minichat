@@ -2,9 +2,10 @@
 const websocketServer = require('ws').Server;
 const fs = require('fs');
 const config = require('./config.json');
-const ws = new websocketServer({port:config.port});
 const express = require('express');
 const app = express();
+const http = require('http').createServer(app);
+const ws = new websocketServer({port:config.port,server:http});
 var clients = [];
 var names = [];
 
@@ -15,6 +16,7 @@ if (config.webserver){
 }
 
 //websocket
+ws.mount(app);
 ws.on('connection',function(f){
   ws.on('chat',function(e){
     clients.forEach(function(client) {
