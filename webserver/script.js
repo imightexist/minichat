@@ -38,7 +38,7 @@ function usernameCookie(){
 function send(){
   socket.send("chat",getCookie("username") + "▸" + document.getElementById("chat-input").value);
 }
-var socket = new WebSocket("ws://" + window.location.host);
+var socket = new WebSocket("ws://" + window.location.host,['connection']);
 if (getCookie("username") == ""){
   document.getElementById("login").style.display = "";
 }else{
