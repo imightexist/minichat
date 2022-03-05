@@ -16,7 +16,6 @@ if (config.webserver){
 }
 
 //websocket
-ws.mount(app);
 ws.on('connection',function(f){
   ws.on('chat',function(e){
     clients.forEach(function(client) {
