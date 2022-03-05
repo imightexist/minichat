@@ -17,15 +17,19 @@ if (config.webserver){
 
 //websocket
 ws.on('connection',function(f,err){
+  clients.push(f);
   if (err){
     throw err;
   }
   ws.on('username',function(e){
     names.push(e);
   });
+  ws.on('list',function(){
+    e.send("list",names);
+  });
   ws.on('chat',function(e){
     clients.forEach(function(client) {
-      client.send(message.utf8Data);
+      client.send(e.utf8Data);
     });
   });
 });
