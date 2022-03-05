@@ -30,20 +30,20 @@ function setCookie(cname, cvalue, exdays) {
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 function usernameCookie(){
-  socket.send("disconnect",getCookie(username));
+  socket.send("disconnect",getCookie("username"));
   setCookie("username",document.getElementById('username').value,60);
-  socket.send("username",getCookie(username));
+  socket.send("username",getCookie("username"));
   document.getElementById("login").style.display = "none";
 }
 function send(){
-  socket.send("chat",getCookie(username) + "▸" + document.getElementById("chat-input").value);
+  socket.send("chat",getCookie("username") + "▸" + document.getElementById("chat-input").value);
 }
 if (location.protocol == "https"){
   var socket = new WebSocket("wss://" + window.location.host);
 }else{
   var socket = new WebSocket("ws://" + window.location.host);
 }
-if (getCookie(username) = ""){
+if (getCookie("username") = ""){
   document.getElementById("login").style.display = "";
 }else{
   socket.send("username",getCookie(username));
