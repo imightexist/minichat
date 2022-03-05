@@ -16,7 +16,10 @@ if (config.webserver){
 }
 
 //websocket
-ws.on('connection',function(f){
+ws.on('connection',function(f,err){
+  if (err){
+    throw err;
+  }
   ws.on('chat',function(e){
     clients.forEach(function(client) {
       client.send(message.utf8Data);
