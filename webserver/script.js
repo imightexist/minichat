@@ -38,11 +38,7 @@ function usernameCookie(){
 function send(){
   socket.send("chat",getCookie("username") + "▸" + document.getElementById("chat-input").value);
 }
-if (location.protocol == "https"){
-  var socket = new WebSocket("wss://" + window.location.host);
-}else{
-  var socket = new WebSocket("ws://" + window.location.host);
-}
+var socket = new WebSocket("ws://" + window.location.host);
 if (getCookie("username") = ""){
   document.getElementById("login").style.display = "";
 }else{
